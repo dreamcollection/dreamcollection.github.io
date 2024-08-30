@@ -5,224 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Collection - Handmade Jewelry</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header .logo img {
-            width: 120px;
-        }
-        header .search-bar {
-            display: flex;
-            justify-content: center;
-            flex-grow: 1;
-            margin: 0 20px;
-        }
-        header .search-bar input {
-            padding: 10px;
-            width: 100%;
-            max-width: 600px;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            font-size: 1em;
-        }
-        header .user-actions {
-            display: flex;
-            gap: 15px;
-        }
-        header .user-actions i {
-            font-size: 1.5em;
-            color: #333;
-            cursor: pointer;
-        }
-        nav {
-            background-color: #fff;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            position: sticky;
-            top: 80px;
-            z-index: 999;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #eee;
-        }
-        .filter-sort {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-        .filter-sort .filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .filter-sort .filters button {
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .filter-sort .filters button:hover {
-            background-color: #f0f0f0;
-        }
-        .filter-sort .sort {
-            margin-top: 10px;
-        }
-        .filter-sort .sort select {
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-            cursor: pointer;
-        }
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-            justify-content: space-around;
-        }
-        .product-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            width: calc(25% - 40px);
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-            position: relative;
-        }
-        .product-card:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-        .product-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-        .product-card h3 {
-            margin: 0 0 10px;
-            font-size: 1.5em;
-            color: #333;
-        }
-        .product-card .price {
-            font-size: 1.2em;
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-        .product-card .price .original {
-            text-decoration: line-through;
-            color: #999;
-            margin-right: 10px;
-        }
-        .product-card .availability {
-            font-size: 0.9em;
-            color: #f00;
-        }
-        .product-card .wishlist-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5em;
-            color: #e74c3c;
-            cursor: pointer;
-        }
-        .product-card .wishlist-icon:hover {
-            color: #c0392b;
-        }
-        .recently-viewed {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #fff;
-            padding: 10px;
-            border-top: 1px solid #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-        .recently-viewed img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-        footer a {
-            color: #d4af37;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 1200px) {
-            .product-card {
-                width: calc(33.333% - 20px);
-            }
-        }
-        @media (max-width: 900px) {
-            .product-card {
-                width: calc(50% - 20px);
-            }
-        }
-        @media (max-width: 600px) {
-            .product-card {
-                width: 100%;
-            }
-            header, nav, .filter-sort {
-                flex-direction: column;
-                align-items: center;
-            }
-            .filter-sort .filters {
-                flex-direction: column;
-            }
-            .recently-viewed {
-                flex-direction: column;
-            }
-            .recently-viewed img {
-                width: 80px;
-                height: 80px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
 
@@ -241,14 +24,16 @@
     </header>
 
     <nav>
-        <a href="#">All Jewellery</a>
-        <a href="#">Gold</a>
-        <a href="#">Diamond</a>
-        <a href="#">Earrings</a>
-        <a href="#">Rings</a>
-        <a href="#">Collections</a>
-        <a href="#">Gifting</a>
-        <a href="#">More</a>
+        <ul>
+            <li><a href="#">All Jewellery</a></li>
+            <li><a href="#">Gold</a></li>
+            <li><a href="#">Diamond</a></li>
+            <li><a href="#">Earrings</a></li>
+            <li><a href="#">Rings</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Gifting</a></li>
+            <li><a href="#">More</a></li>
+        </ul>
     </nav>
 
     <div class="filter-sort">
@@ -270,7 +55,7 @@
         </div>
     </div>
 
-    <div class="products">
+    <main class="products">
         <div class="product-card">
             <img src="path_to_image1.jpg" alt="Product 1">
             <h3>Starry Dual Tone Diamond Stud Earrings</h3>
@@ -307,27 +92,13 @@
             <div class="availability">Only 1 left!</div>
             <i class="fas fa-heart wishlist-icon"></i>
         </div>
-    </div>
-
-    <div class="recently-viewed">
-        <span>Recently Viewed:</span>
-        <img src="path_to_recently_viewed1.jpg" alt="Recently Viewed 1">
-        <img src="path_to_recently_viewed2.jpg" alt="Recently Viewed 2">
-        <img src="path_to_recently_viewed3.jpg" alt="Recently Viewed 3">
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2024 Dream Collection. All Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script>
-        document.querySelectorAll('.wishlist-icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                icon.classList.toggle('fas');
-                icon.classList.toggle('far');
-            });
-        });
-    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome for icons -->
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
