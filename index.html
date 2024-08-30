@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This Is Dream Collection - Testing Page</title>
+    <title>Dream Collection - Handmade Jewelry</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #fafafa;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #8B5E3C;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
         }
         header h1 {
@@ -26,52 +27,101 @@
             text-align: center;
         }
         nav a {
-            color: #333;
+            color: #8B5E3C;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
         }
         main {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #8B5E3C;
+            margin-bottom: 20px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-item {
+            flex: 1 1 calc(33.333% - 20px);
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
         footer {
-            background-color: #333;
+            background-color: #8B5E3C;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
             margin-top: 20px;
-        }
-        footer p {
-            margin: 0;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>This Is Dream Collection</h1>
+    <h1>Dream Collection</h1>
+    <p>Exquisite Handmade Jewelry</p>
 </header>
 
 <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
     <a href="#">About</a>
+    <a href="#">Products</a>
     <a href="#">Contact</a>
 </nav>
 
 <main>
-    <h2>Welcome to This Is Dream Collection</h2>
-    <p>This is a testing page to showcase the website layout and design. Here, you can explore various sections, including our exclusive shop, learn more about our mission, and get in touch with us. Stay tuned for our official launch!</p>
-    <h3>Featured Collection</h3>
-    <p>Check out our dreamiest collection yet! Our products are handpicked to ensure the best quality and style.</p>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Dream Collection, where passion meets creativity. Each piece of our handmade jewelry is crafted with precision and love, ensuring that you receive nothing but the best. Our collection is designed to inspire and make you feel unique, just like the jewelry we create.</p>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product-item">
+                <img src="path_to_image1.jpg" alt="Product 1">
+                <h3>Product Name 1</h3>
+                <p>Brief description of the product.</p>
+            </div>
+            <div class="product-item">
+                <img src="path_to_image2.jpg" alt="Product 2">
+                <h3>Product Name 2</h3>
+                <p>Brief description of the product.</p>
+            </div>
+            <div class="product-item">
+                <img src="path_to_image3.jpg" alt="Product 3">
+                <h3>Product Name 3</h3>
+                <p>Brief description of the product.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to place a custom order, feel free to reach out to us!</p>
+        <p>Email: <a href="mailto:info@dreamcollection.com">info@dreamcollection.com</a></p>
+        <p>Phone: +123-456-7890</p>
+    </section>
 </main>
 
 <footer>
-    <p>&copy; 2024 This Is Dream Collection. All rights reserved.</p>
+    <p>&copy; 2024 Dream Collection. All rights reserved.</p>
 </footer>
 
 </body>
