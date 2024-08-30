@@ -14,7 +14,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     position: sticky;
@@ -23,12 +23,10 @@ header {
 }
 
 header .logo img {
-    width: 120px;
+    width: 100px;
 }
 
 header .search-bar {
-    display: flex;
-    justify-content: center;
     flex-grow: 1;
     margin: 0 20px;
 }
@@ -36,7 +34,7 @@ header .search-bar {
 header .search-bar input {
     padding: 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     border: 1px solid #ddd;
     border-radius: 25px;
     font-size: 1em;
@@ -56,14 +54,14 @@ header .user-actions i {
 /* Navigation Styles */
 nav {
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: center; /* Center items on smaller screens */
-    gap: 10px; /* Add space between items */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     position: sticky;
-    top: 80px;
+    top: 60px; /* Adjusted to fit below header */
     z-index: 999;
 }
 
@@ -74,7 +72,7 @@ nav a {
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Prevent text from wrapping */
+    display: block; /* Ensures full clickable area */
 }
 
 nav a:hover {
@@ -86,7 +84,6 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     padding: 20px;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
@@ -95,10 +92,11 @@ nav a:hover {
 .filter-sort .filters {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
 }
 
 .filter-sort .filters button {
-    padding: 10px 15px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
@@ -110,8 +108,14 @@ nav a:hover {
     background-color: #f0f0f0;
 }
 
+.filter-sort .sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .filter-sort .sort select {
-    padding: 10px 15px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
@@ -124,18 +128,19 @@ nav a:hover {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    justify-content: space-around;
+    justify-content: center; /* Center items */
 }
 
 .product-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: calc(25% - 40px);
+    width: calc(25% - 20px); /* Adjusted for spacing */
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     position: relative;
+    text-align: center;
 }
 
 .product-card:hover {
@@ -150,12 +155,12 @@ nav a:hover {
 
 .product-card h3 {
     margin: 0 0 10px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #333;
 }
 
 .product-card .price {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #d4af37;
     margin-bottom: 10px;
 }
@@ -204,18 +209,36 @@ footer a:hover {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    header, .filter-sort, .products {
+    header {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
+    }
+
+    header .search-bar {
+        margin: 10px 0;
     }
 
     nav {
         flex-direction: column;
-        align-items: center;
     }
 
     .product-card {
-        width: 100%;
-        max-width: 300px;
+        width: calc(50% - 20px); /* Adjusted for mobile view */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .filter-sort {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-sort .filters {
+        margin-bottom: 10px;
     }
 }
