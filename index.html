@@ -1,244 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Collection - Handmade Jewelry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
-
         body {
             font-family: 'Playfair Display', serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
         }
-
         header {
-            background: url('https://dreamcollection.live/header-bg.jpg') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 50px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header img.logo {
-            width: 120px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-
-        header h1 {
-            margin: 0;
-            font-family: 'Cinzel', serif;
-            font-size: 3.5em;
-            letter-spacing: 3px;
-            animation: fadeInUp 1s ease;
-        }
-
-        header p {
-            font-size: 1.5em;
-            margin-top: 10px;
-            font-style: italic;
-            color: #d4af37;
-            animation: fadeInUp 1.2s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        nav {
-            background-color: #1b1b1b;
-            padding: 15px 0;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
+        header .logo img {
+            width: 120px;
+        }
+        header .search-bar {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
             margin: 0 20px;
-            font-size: 1.2em;
+        }
+        header .search-bar input {
+            padding: 10px;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 1em;
+        }
+        header .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+        header .user-actions i {
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+        }
+        nav {
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-around;
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-
         nav a:hover {
-            color: #d4af37;
+            background-color: #eee;
         }
-
-        main {
-            max-width: 1200px;
-            margin: 30px auto;
+        .filter-sort {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            border-bottom: 1px solid #ddd;
         }
-
-        section {
-            margin-bottom: 40px;
+        .filter-sort .filters {
+            display: flex;
+            gap: 10px;
         }
-
-        h2 {
-            color: #d4af37;
-            font-family: 'Cinzel', serif;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #d4af37;
-            display: inline-block;
-            padding-bottom: 10px;
+        .filter-sort .filters button {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-
+        .filter-sort .filters button:hover {
+            background-color: #f0f0f0;
+        }
+        .filter-sort .sort select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
         .products {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: space-between;
-        }
-
-        .product-item {
-            flex: 1 1 calc(33.333% - 20px);
-            background-color: #f9f9f9;
             padding: 20px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            justify-content: space-around;
         }
-
-        .product-item:hover {
-            transform: translateY(-5px);
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(25% - 40px);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            position: relative;
+        }
+        .product-card:hover {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
-
-        .product-item img {
-            max-width: 100%;
-            height: auto;
+        .product-card img {
+            width: 100%;
             border-radius: 10px;
             margin-bottom: 15px;
-            transition: transform 0.3s ease;
         }
-
-        .product-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .product-item h3 {
-            font-family: 'Cinzel', serif;
+        .product-card h3 {
+            margin: 0 0 10px;
             font-size: 1.5em;
+            color: #333;
+        }
+        .product-card .price {
+            font-size: 1.2em;
+            color: #d4af37;
             margin-bottom: 10px;
-            color: #1b1b1b;
         }
-
-        .product-item p {
-            font-size: 1em;
-            color: #555;
+        .product-card .price .original {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
         }
-
+        .product-card .availability {
+            font-size: 0.9em;
+            color: #f00;
+        }
+        .product-card .wishlist-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            color: #e74c3c;
+            cursor: pointer;
+        }
+        .product-card .wishlist-icon:hover {
+            color: #c0392b;
+        }
+        .recently-viewed {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .recently-viewed img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
         footer {
-            background-color: #1b1b1b;
+            background-color: #333;
             color: #fff;
+            padding: 20px;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
-            border-top: 5px solid #d4af37;
+            margin-top: 40px;
         }
-
-        footer p {
-            margin: 0;
-            font-size: 1em;
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            header, nav, .filter-sort, .products {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-card {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
-
 <body>
 
     <header>
-        <img src="https://dreamcollection.live/1st%20option.jpg" alt="Dream Collection Logo" class="logo">
-        <h1>Dream Collection</h1>
-        <p>Exquisite Handmade Jewelry</p>
+        <div class="logo">
+            <img src="https://dreamcollection.live/1st%20option.jpg" alt="Dream Collection">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Jewelry...">
+        </div>
+        <div class="user-actions">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
+        <a href="#">All Jewellery</a>
+        <a href="#">Gold</a>
+        <a href="#">Diamond</a>
+        <a href="#">Earrings</a>
+        <a href="#">Rings</a>
+        <a href="#">Collections</a>
+        <a href="#">Gifting</a>
+        <a href="#">More</a>
     </nav>
 
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Welcome to Dream Collection, where passion meets creativity. Each piece of our handmade jewelry is crafted
-                with precision and love, ensuring that you receive nothing but the best. Our collection is designed to
-                inspire and make you feel unique, just like the jewelry we create.</p>
-        </section>
+    <div class="filter-sort">
+        <div class="filters">
+            <button>Bangle</button>
+            <button>Earrings</button>
+            <button>Necklace</button>
+            <button>Pendant</button>
+            <button>Mangalsutra</button>
+        </div>
+        <div class="sort">
+            <label for="sort">Sort By:</label>
+            <select id="sort">
+                <option value="best">Best Matches</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="new">Newest Arrivals</option>
+            </select>
+        </div>
+    </div>
 
-        <section id="products">
-            <h2>Our Products</h2>
-            <div class="products">
-                <div class="product-item">
-                    <img src="path_to_image1.jpg" alt="Product 1">
-                    <h3>Product Name 1</h3>
-                    <p>Brief description of the product.</p>
-                </div>
-                <div class="product-item">
-                    <img src="path_to_image2.jpg" alt="Product 2">
-                    <h3>Product Name 2</h3>
-                    <p>Brief description of the product.</p>
-                </div>
-                <div class="product-item">
-                    <img src="path_to_image3.jpg" alt="Product 3">
-                    <h3>Product Name 3</h3>
-                    <p>Brief description of the product.</p>
-                </div>
+    <div class="products">
+        <div class="product-card">
+            <img src="path_to_image1.jpg" alt="Product 1">
+            <h3>Starry Dual Tone Diamond Stud Earrings</h3>
+            <div class="price">
+                <span class="original">₹39351</span> ₹38172
             </div>
-        </section>
+            <div class="availability">Only 1 left!</div>
+            <i class="fas fa-heart wishlist-icon"></i>
+        </div>
+        <div class="product-card">
+            <img src="path_to_image2.jpg" alt="Product 2">
+            <h3>Dainty Mesh Diamond Stud Earrings</h3>
+            <div class="price">
+                <span class="original">₹47711</span> ₹44950
+            </div>
+            <div class="availability">Only 1 left!</div>
+            <i class="fas fa-heart wishlist-icon"></i>
+        </div>
+        <div class="product-card">
+            <img src="path_to_image3.jpg" alt="Product 3">
+            <h3>Embrace Hearts Diamond Hoop Earrings</h3>
+            <div class="price">
+                <span class="original">₹32066</span> ₹29990
+            </div>
+            <div class="availability">Only 1 left!</div>
+            <i class="fas fa-heart wishlist-icon"></i>
+        </div>
+        <div class="product-card">
+            <img src="path_to_image4.jpg" alt="Product 4">
+            <h3>Hearts In A Knot Diamond Hoop Earrings</h3>
+            <div class="price">
+                <span class="original">₹29266</span> ₹28755
+            </div>
+            <div class="availability">Only 1 left!</div>
+            <i class="fas fa-heart wishlist-icon"></i>
+        </div>
+    </div>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or would like to place a custom order, feel free to reach out to us!</p>
-            <p>Email: <a href="mailto:info@dreamcollection.com">info@dreamcollection.com</a></p>
-            <p>Phone: +123-456-7890</p>
-        </section>
-    </main>
+    <div class="recently-viewed">
+        <span>Recently Viewed:</span>
+        <img src="path_to_recently_viewed1.jpg" alt="Recently Viewed 1">
+        <img src="path_to_recently_viewed2.jpg" alt="Recently Viewed 2">
+        <img src="path_to_recently_viewed3.jpg" alt="Recently Viewed 3">
+    </div>
 
     <footer>
-        <p>&copy; 2024 Dream Collection. All rights reserved.</p>
+        <p>&copy; 2024 Dream Collection. All Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
     </footer>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.querySelectorAll('.wishlist-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                icon.classList.toggle('fas');
+                icon.classList.toggle('far');
+            });
+        });
+    </script>
 </body>
-
 </html>
