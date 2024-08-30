@@ -4,9 +4,12 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -24,14 +27,16 @@ header .logo img {
 }
 
 header .search-bar {
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
     margin: 0 20px;
 }
 
 header .search-bar input {
+    padding: 10px;
     width: 100%;
     max-width: 600px;
-    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 25px;
     font-size: 1em;
@@ -48,41 +53,35 @@ header .user-actions i {
     cursor: pointer;
 }
 
+/* Navigation Styles */
 nav {
     background-color: #fff;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items on smaller screens */
+    gap: 10px; /* Add space between items */
     position: sticky;
     top: 80px;
     z-index: 999;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
+nav a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
-nav ul li a:hover {
+nav a:hover {
     background-color: #eee;
 }
 
+/* Filter & Sort Styles */
 .filter-sort {
     display: flex;
     flex-wrap: wrap;
@@ -111,12 +110,6 @@ nav ul li a:hover {
     background-color: #f0f0f0;
 }
 
-.filter-sort .sort {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .filter-sort .sort select {
     padding: 10px 15px;
     border: 1px solid #ddd;
@@ -125,19 +118,20 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Product Styles */
 .products {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .product-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: calc(25% - 20px);
+    width: calc(25% - 40px);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
@@ -190,11 +184,13 @@ nav ul li a:hover {
     color: #c0392b;
 }
 
+/* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 footer a {
@@ -206,38 +202,20 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .product-card {
-        width: calc(33.33% - 20px);
-    }
-}
-
+/* Mobile Styles */
 @media (max-width: 768px) {
-    header, nav, .filter-sort {
+    header, .filter-sort, .products {
         flex-direction: column;
         align-items: center;
     }
 
-    .search-bar {
-        margin: 10px 0;
+    nav {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .product-card {
-        width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
     .product-card {
         width: 100%;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 5px 0;
+        max-width: 300px;
     }
 }
