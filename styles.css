@@ -207,6 +207,26 @@ nav ul li a:hover {
     color: #c0392b;
 }
 
+/* About Us Section */
+.about-us {
+    background-color: #f0ece1;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.about-us h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #b17a58;
+}
+
+.about-us p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
 /* Footer Styles */
 footer {
     background-color: #333;
