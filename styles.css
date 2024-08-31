@@ -158,10 +158,11 @@ nav ul li a:hover {
     width: calc(25% - 20px); /* Adjusted for spacing */
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
     position: relative;
     text-align: center;
     box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow: hidden; /* Hide overflow to keep zoomed image within card */
 }
 
 .product-card img {
@@ -171,6 +172,13 @@ nav ul li a:hover {
     object-fit: cover; /* Ensures the image covers the area without stretching */
     border-radius: 10px;
     margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+/* Add hover effect for product-card */
+.product-card:hover img {
+    transform: scale(1.2); /* Zooms in image to 120% on hover */
+    max-height: none; /* Remove max-height on hover to allow full zoom */
 }
 
 .product-card h3 {
