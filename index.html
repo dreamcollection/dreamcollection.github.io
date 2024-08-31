@@ -312,13 +312,16 @@
             <i class="fas fa-shopping-cart"></i>
         </div>
     </header>
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#" data-filter="all">All Jewelry</a></li>
-            <li><a href="#" data-filter="earrings">Earrings</a></li>
-            <li><a href="#" data-filter="rings">Rings</a></li>
+
+    <nav>
+        <ul>
+            <li><a href="#">All Jewellery</a></li>
+            <li><a href="#">Earrings</a></li>
+            <li><a href="#">Rings</a></li>  
+            <li><a href="#">More</a></li>
         </ul>
     </nav>
+
     <div class="filter-sort">
         <div class="filters">
             <button>Bangle</button>
@@ -494,23 +497,18 @@
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const products = document.querySelectorAll('.product');
+        document.getElementById('search-box').addEventListener('input', function() {
+            var searchQuery = this.value.toLowerCase();
+            var products = document.querySelectorAll('.product-card');
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const filter = link.getAttribute('data-filter');
-
-                    products.forEach(product => {
-                        if (filter === 'all' || product.getAttribute('data-category') === filter) {
-                            product.style.display = 'block';
-                        } else {
-                            product.style.display = 'none';
-                        }
-                    });
-                });
+            products.forEach(function(product) {
+                var productName = product.getAttribute('data-name').toLowerCase();
+                if (productName.includes(searchQuery)) {
+                    product.style.display = 'block';
+                    product.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    product.style.display = 'none';
+                }
             });
         });
     </script>
