@@ -295,31 +295,21 @@
             <p>&copy; 2024 Dream Collection. All rights reserved.</p>
         </div>
     </footer>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('search-input');
-        const productsContainer = document.getElementById('products-container');
-        const noProductsMessage = document.getElementById('no-products-message');
-        const productCards = productsContainer.getElementsByClassName('product-card');
+    <script>
+        document.getElementById('search-box').addEventListener('input', function() {
+            var searchQuery = this.value.toLowerCase();
+            var products = document.querySelectorAll('.product-card');
 
-        searchInput.addEventListener('input', function() {
-            const searchQuery = this.value.toLowerCase();
-            let hasVisibleProducts = false;
-
-            Array.from(productCards).forEach(function(product) {
-                const productName = product.getAttribute('data-name').toLowerCase();
+            products.forEach(function(product) {
+                var productName = product.getAttribute('data-name').toLowerCase();
                 if (productName.includes(searchQuery)) {
                     product.style.display = 'block';
-                    hasVisibleProducts = true;
-                    product.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    product.scrollIntoView({ behavior: 'smooth' });
                 } else {
                     product.style.display = 'none';
                 }
             });
-
-            noProductsMessage.style.display = hasVisibleProducts ? 'none' : 'block';
         });
-    });
-</script>
+    </script>
 </body>
 </html>
