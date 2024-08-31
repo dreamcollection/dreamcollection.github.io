@@ -24,6 +24,7 @@ header {
 
 header .logo img {
     width: 100px;
+    height: auto;
 }
 
 header .search-bar {
@@ -141,6 +142,7 @@ nav a:hover {
     transition: box-shadow 0.3s ease;
     position: relative;
     text-align: center;
+    overflow: hidden; /* Ensure content does not overflow */
 }
 
 .product-card:hover {
@@ -149,6 +151,9 @@ nav a:hover {
 
 .product-card img {
     width: 100%;
+    height: auto;
+    object-fit: cover; /* Adjusts image to cover container */
+    max-height: 200px; /* Optional: set a maximum height */
     border-radius: 10px;
     margin-bottom: 15px;
 }
