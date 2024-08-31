@@ -132,6 +132,13 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Highlight Matched Product */
+.product-card.matched {
+    border-color: #d4af37; /* Gold color for highlighting */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Product Styles */
 .products {
     display: flex;
