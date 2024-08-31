@@ -207,16 +207,55 @@ footer {
     padding: 20px;
     text-align: center;
     margin-top: auto; /* Push footer to the bottom */
+    position: relative;
+    z-index: 1000; /* Ensure footer is above other elements */
 }
 
-footer a {
+footer .footer-content {
+    margin-bottom: 20px;
+}
+
+footer .footer-content h4 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #d4af37;
+}
+
+footer .footer-content p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+footer .footer-content a {
     color: #d4af37;
     text-decoration: none;
+    font-weight: bold;
 }
 
-footer a:hover {
+footer .footer-content a:hover {
     text-decoration: underline;
 }
+
+footer .contact-details {
+    margin-top: 10px;
+}
+
+footer .contact-details a {
+    display: block;
+    margin: 5px 0;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+footer .contact-details a:hover {
+    text-decoration: underline;
+}
+
+footer .contact-details .whatsapp {
+    font-weight: bold;
+}
+
 
 /* Mobile Styles */
 @media (max-width: 768px) {
