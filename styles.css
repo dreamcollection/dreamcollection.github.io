@@ -283,7 +283,7 @@ footer .contact-details .whatsapp {
     }
 
     nav ul {
-        flex-direction: column; /* Stack nav items vertically on mobile */
+        flex-direction: row; /* Stack nav items vertically on mobile */
     }
 
     .product-card {
