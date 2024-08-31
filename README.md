@@ -22,13 +22,13 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/dream-collection.git
+   git clone https://github.com/dreamcollection/dreamcollection.git
    ```
 
 2. **Navigate to the Project Directory**
 
    ```bash
-   cd dream-collection
+   cd dreamcollection
    ```
 
 3. **Open the Project**
