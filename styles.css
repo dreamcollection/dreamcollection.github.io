@@ -149,13 +149,20 @@ nav a:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.product-card img {
+.product-image-container {
     width: 100%;
-    height: auto;
-    object-fit: cover; /* Adjusts image to cover container */
-    max-height: 200px; /* Optional: set a maximum height */
+    height: 200px; /* Set the desired height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the entire image is visible without cropping */
     border-radius: 10px;
-    margin-bottom: 15px;
 }
 
 .product-card h3 {
