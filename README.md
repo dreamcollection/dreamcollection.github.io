@@ -1,3 +1,5 @@
+![Dream Collection Logo](https://dreamcollection.live/1st%20option.jpg)
+
 # Dream Collection - Handmade Jewelry
 
 **Dream Collection** is an elegant and responsive website showcasing a curated collection of handmade jewelry. This project is designed to provide users with a seamless browsing experience for exploring and purchasing unique jewelry pieces.
