@@ -52,3 +52,7 @@ Feel free to fork the repository and make improvements or report issues. Contrib
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Maintainer 
+
+Harshil Anuwadia 
