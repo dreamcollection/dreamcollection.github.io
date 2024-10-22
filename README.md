@@ -55,4 +55,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Maintainer 
 
-Harshil Anuwadia 
+[Harshil Anuwadia](https://github.com/Harshil-Anuwadia)
