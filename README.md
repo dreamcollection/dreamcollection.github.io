@@ -53,6 +53,10 @@ Feel free to fork the repository and make improvements or report issues. Contrib
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Maintainer 
+## Project Account
 
-[Harshil Anuwadia](https://github.com/Harshil-Anuwadia)
+This GitHub account is maintained by **Harshil Anuwadia**.  
+You can explore more projects and repositories on my GitHub profile:  
+[Harshil Anuwadia - GitHub](https://github.com/Harshil-Anuwadia)
+
+Feel free to explore the repositories and contribute!
